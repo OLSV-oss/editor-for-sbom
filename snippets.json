@@ -1,0 +1,52 @@
+{
+	"Document Creation Information": {
+		"prefix": "document",
+		"body": [
+			"## Document Information ",
+			"SPDXVersion: SPDX-2.0",
+			"DataLicense: CC0-1.0",
+			"DocumentNamespace: http://spdx.org/spdxdocs/spdx-example-444504E0-4F89-41D3-9A0C-0305E82C3301",
+			"DocumentName: ${1:Name}",
+			"SPDXID: SPDXRef-DOCUMENT",
+			"DocumentComment: <text></text>",
+			"## External Document References",
+			"ExternalDocumentRef: ",
+			"## Creation Information",
+			"Creator: Tool: LicenseFind-1.0",
+			"Created: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}Z",
+			"CreatorComment: <text></text>",
+			"LicenseListVersion: 1.19",
+			"$2"
+		],
+		"description": "SPDX-Lite SPDXDocumentCreationInformation entity"
+	},
+	"Package Information": {
+		"prefix": "package",
+		"body": [
+			"## Package Information ",
+			"PackageName: ${1:Software Package Name}",
+			"SPDXID: SPDXRef-${1:Software Package Name}",
+			"PackageVersion: NOASSERTION",
+			"PackageDownloadLocation: NOASSERTION",
+			"FilesAnalyzed: false",
+			"PackageHomePage: NOASSERTION",
+			"PackageLicenseConcluded: NOASSERTION",
+			"PackageLicenseDeclared: NOASSERTION",
+			"PackageCopyrightText: <text></text>",
+			"PackageComment: <text></text>",
+			"$2"
+		],
+		"description": "SPDX-Lite PackageInformation entity"
+	},
+	"License Information": {
+		"prefix": "license",
+		"body": [
+			"LicenseID: LicenseRef-${1:License Name}",
+			"ExtractedText: <text></text>",
+			"LicenseName: ${1:License Name}",
+			"LicenseComment:<text></text>",
+			"$2"
+		],
+		"description": "SPDX-Lite LicenseInformation entity"
+	}
+}

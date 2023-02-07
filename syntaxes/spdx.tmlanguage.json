@@ -1,0 +1,488 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "spdx",
+    "patterns": [
+        {
+            "include": "#multiple"
+        },
+        {
+            "include": "#spdxid"
+        },
+        {
+            "include": "#license"
+        },
+        {
+            "include": "#prescribed"
+        },
+        {
+            "include": "#normal"
+        },
+        {
+            "include": "#date"
+        },
+        {
+            "include": "#comment"
+        }
+    ],
+    "repository": {
+        "multiple": {
+            "patterns": [
+                {
+                    "begin": "^(DocumentComment|CreatorComment):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.documentCreationInfo"
+                },
+                {
+                    "begin": "^(PackageSourceInfo|PackageLicenseComments|PackageCopyrightText|PackageSummary|PackageDescription|PackageComment|ExternalRefComment|PackageAttributionText):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.packageInfo"
+                },
+                {
+                    "begin": "^(LicenseComments|FileCopyrightText|FileComment|FileNotice|FileAttributionText):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.fileInfo"
+                },
+                {
+                    "begin": "^(SnippetLicenseComments|SnippetCopyrightText|SnippetComment|SnippetAttributionText):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.snippetInfo"
+                },
+                {
+                    "begin": "^(ExtractedText|LicenseComment):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.extractedLicenseInfo"
+                },
+                {
+                    "begin": "^(RelationshipComment):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.relationship"
+                },
+                {
+                    "begin": "^(AnnotationComment):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.annotation"
+                },
+                {
+                    "begin": "^(ReviewComment):\\s",
+                    "end": "(?<=</text>)",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "invalid.deprecated spdx.section.reviewInfo"
+                }
+            ]
+        },
+        "spdxid": {
+            "patterns": [
+                {
+                    "begin": "^(SPDXID):\\s(SPDXRef-DOCUMENT)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.id"
+                        },
+                        "2": {
+                            "name": "spdx.field.value.identifier"
+                        }
+                    },
+                    "end": "\\n",
+                    "name": "spdx.section.documentCreationInfo"
+                },
+                {
+                    "begin": "^(SPDXID|SnippetSPDXID):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.id"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ]
+                }
+            ]
+        },
+        "prescribed": {
+            "patterns": [
+                {
+                    "begin": "^(SPDXVersion|DataLicense|DocumentNamespace|ExternalDocumentRef|LicenseListVersion|Creator):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.documentCreationInfo"
+                },
+                {
+                    "begin": "^(PackageSupplier|PackageOriginator|PackageDownloadLocation|FilesAnalyzed|PackageVerificationCode|PackageChecksum|PackageHomePage|PackageLicenseInfoFromFiles|ExternalRef):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.packageInfo"
+                },
+                {
+                    "begin": "^(FileName|FileType|FileChecksum|LicenseInfoInFile|ArtifactOfProjectHomePage|ArtifactOfProjectURI|ArtifactOfProjectName):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.fileInfo"
+                },
+                {
+                    "begin": "^(SnippetFromFileSPDXID|SnippetByteRange|SnippetLineRange|LicenseInfoInSnippet):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.snippetInfo"
+                },
+                {
+                    "begin": "^(LicenseCrossReference):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.extractedLicenseInfo"
+                },
+                {
+                    "begin": "^(Relationship):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.relationship"
+                },
+                {
+                    "begin": "^(Annotator|AnnotationType|SPDXREF):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.annotation"
+                },
+                {
+                    "begin": "^(Reviewer):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "invalid.deprecated spdx.section.reviewInfo"
+                }
+            ]
+        },
+        "license": {
+            "patterns": [
+                {
+                    "begin": "^(PackageLicenseConcluded|PackageLicenseDeclared):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.license"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.packageInfo"
+                },
+                {
+                    "begin": "^(LicenseConcluded):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.license"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.fileInfo"
+                },
+                {
+                    "begin": "^(SnippetLicenseConcluded):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.license"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.snippetInfo"
+                },
+                {
+                    "begin": "^(LicenseID):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.license"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.extractedLicenseInfo"
+                }
+            ]
+        },
+        "normal": {
+            "patterns": [
+                {
+                    "begin": "^(DocumentName):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.documentCreationInfo"
+                },
+                {
+                    "begin": "^(PackageName|PackageInfo|PackageVersion|PackageFileName):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.packageInfo"
+                },
+                {
+                    "begin": "^(FileContributor|FileDependency):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.fileInfo"
+                },
+                {
+                    "begin": "^(SnippetName):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.snippetInfo"
+                },
+                {
+                    "begin": "^(LicenseName):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.extractedLicenseInfo"
+                },
+                {
+                    "begin": "^(Relationship):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.relationship"
+                },
+                {
+                    "begin": "^(Annotator|AnnotationType|SPDXREF):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.annotation"
+                },
+                {
+                    "begin": "^(Reviewer):\\s",
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "invalid.deprecated spdx.section.reviewInfo"
+                }
+            ]
+        },
+        "date": {
+            "patterns": [
+                {
+                    "begin": "^(Created):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.date"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.documentCreationInfo"
+                },
+                {
+                    "begin": "^(AnnotationDate):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.date"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "spdx.section.annotation"
+                },
+                {
+                    "begin": "^(ReviewDate):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "spdx.field.tag.date"
+                        }
+                    },
+                    "end": "\\n",
+                    "patterns": [
+                        {
+                            "include": "#field"
+                        }
+                    ],
+                    "name": "invalid.deprecated spdx.section.reviewInfo"
+                }
+            ]
+        },
+        "field": {
+            "patterns": [
+                {
+                    "comment": "2011-03-13T00:00:00Z",
+                    "match": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z",
+                    "name": "spdx.field.value.date"
+                },
+                {
+                    "comment": "spdx-identifier",
+                    "match": "SPDXRef-[[:alnum:]\\.\\-]+\\n",
+                    "name": "spdx.field.value.identifier"
+                },
+                {
+                    "comment": "spdx-license-identifier",
+                    "match": "LicenseRef-[[:alnum:]\\.\\-]+\\n",
+                    "name": "spdx.field.value.license"
+                },
+                {
+                    "comment": "spdx-document-identifier",
+                    "match": "DocumentRef-[[:alnum:]\\.\\-]+\\n",
+                    "name": "spdx.field.value.identifier"
+                },
+                {
+                    "comment": "NONE",
+                    "match": "NONE",
+                    "name": "constant.character"
+                },
+                {
+                    "comment": "NOASSERTION",
+                    "match": "NOASSERTION",
+                    "name": "constant.character"
+                },
+                {
+                    "comment": "text",
+                    "match": ".*",
+                    "name": "spdx.field.value.text"
+                },
+                {
+                    "begin": "(<text>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "constant.character"
+                        }
+                    },
+                    "end": "(</text>)",
+                    "endCaptures": {
+                        "1": {
+                            "name": "constant.character"
+                        }
+                    },
+                    "name": "spdx.field.value.comment"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign",
+                    "match": "#+\\s+.*\\n"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.spdx"
+}

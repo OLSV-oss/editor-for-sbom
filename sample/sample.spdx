@@ -1,0 +1,154 @@
+SPDXVersion: SPDX-2.0
+DataLicense: CC0-1.0
+DocumentNamespace: http://spdx.org/spdxdocs/spdx-example-6b8a77a3-f4b7-34db-2e93-596d4252128f
+DocumentName: Example-of-SBOM-0.0.1
+SPDXID: SPDXRef-DOCUMENT
+DocumentComment: <text>This file is a sample for checking features of Editor for SBOM.</text>
+
+## External Document References
+ExternalDocumentRef: DocumentRef-spdx-tool-1.2 http://spdx.org/spdxdocs/spdx-tools-v1.2-3F2504E0-4F89-41D3-9A0C-0305E82C3301 SHA1: d6a770ba38583ed4bb4525bd96e50461655d2759
+## Creation Information
+Creator: Organization: Hitachi Solutions, Ltd. ()
+Creator: Person: Tomoyasu Akashi ()
+Created: 2023-02-01T17:30:22Z
+CreatorComment: <text>Please note that the information written in this file is a simulation of the actual SBOM to confirm features,
+and the contents are not accurate.</text>
+LicenseListVersion: 3.19
+## Annotations
+Annotator: Person: Tomoyasu Akashi ()
+AnnotationDate: 2023-02-01T17:30:22Z
+AnnotationComment: <text>This annotation is sample string.</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-DOCUMENT
+## Relationships
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package
+Relationship: SPDXRef-DOCUMENT CONTAINS SPDXRef-Without
+
+FileName: ./package/test.c
+SPDXID: SPDXRef-File
+FileType: SOURCE
+FileChecksum: MD5: 098f6bcd4621d373cade4e832627b4f6
+FileChecksum: SHA1: a94a8fe5ccb19ba61c4c0873d391e987982fbbd3
+LicenseConcluded: (MIT OR LicenseRef-1)
+LicenseInfoInFile: LicenseRef-1
+LicenseInfoInFile: MIT
+LicenseComments: <text>LicenseRef-1 and MIT license text detected.</text>
+FileCopyrightText: <text>Copyright 2023 John Doe</text>
+FileComment: <text>This file appears in other packages, such as test and test○○○.</text>
+FileNotice: <text>This file is licensed under LicenseRef-1.</text>
+FileContributor: Hitachi Solutions, Ltd.
+FileContributor: John Doe
+FileAttributionText: <text>All materials mentioning features or use of this software must display the following acknowledgement: 
+This software was developed by the XYZ.</text>
+## Relationships
+Relationship: SPDXRef-File CONTAINS SPDXRef-Snippet
+## Annotations
+Annotator: Person: John Doe
+AnnotationDate: 2023-02-01T17:30:22Z
+AnnotationComment: <text>This file don't exist.</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-File
+
+## Package Information
+PackageName: Example Package
+SPDXID: SPDXRef-Package
+PackageVersion: 1.0.0
+PackageFileName: example-1.0.0.tar.gz
+PackageSupplier: Person: Jane Doe (jane.doe@example.com)
+PackageOriginator: Organization: ExampleOrganization (contact@mla.example.com)
+PackageDownloadLocation: http://ftp.gnu.org/example/example/example-0.0.1.tar.gz
+FilesAnalyzed: true
+PackageVerificationCode: 582681c2eae02b3f3d399c0c26d321560f6c567a (excludes: ./package.spdx)
+PackageChecksum: SHA1: c3499c2729730a7f807efb8676a92dcb6f8a3f8f
+PackageChecksum: SHA256: 50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c
+PackageChecksum: MD5: 1a79a4d60de6718e8e5b326e338ae533
+PackageHomePage: http://ftp.gnu.org/example/example
+PackageSourceInfo: <text>uses glibc-2_11-branch from git://sourceware.org/git/glibc.git.</text>
+PackageLicenseConcluded: (BSD-3-Clause OR LicenseRef-2)
+## License information from files
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageLicenseInfoFromFiles: LicenseRef-2
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseComments: <text>Analysis of the package revealed that it contained a different license than BSD-3.</text>
+PackageCopyrightText: <text>Copyright 2022-2023 Jane Doe</text>
+PackageSummary: <text>Example package data.</text>
+PackageDescription: <text>This Example package does not actually exist.</text>
+PackageComment: <text>This comment is example.</text>
+PackageAttributionText: <text>All materials mentioning features or use of this software must display the following acknowledgement: 
+This software was developed by the XYZ.</text>
+## External references
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:example_software:example_package:1.0.0:*:*:*:*:*:*:*
+ExternalRefComment: <text>This external ref is not a valid reference.</text>
+## Annotations
+Annotator: Person: Example Commenter
+AnnotationDate: 2023-02-01T17:30:22Z
+AnnotationComment: <text>Annotation for Package</text>
+AnnotationType: OTHER
+SPDXREF: SPDXRef-Package
+## Relationships
+Relationship: SPDXRef-Package CONTAINS SPDXRef-File
+
+## Snippet
+SnippetSPDXID: SPDXRef-Snippet
+SnippetFromFileSPDXID: SPDXRef-File
+SnippetByteRange: 100:234
+SnippetLineRange: 6:36
+SnippetLicenseConcluded: X11
+SnippetLicenseComments: <text>
+The concluded license was taken from package example, from which the snippet was copied into the current file. The concluded license information was found in the LICENSE.txt file in package example.
+</text>
+SnippetCopyrightText: <text> Copyright 2000-2001 Nanashino Gonbe </text>
+SnippetComment: <text>
+The file containing this snippet is licensed under MIT, but the snippet was originally X11 licensed.
+</text>
+SnippetName: from specific file
+LicenseInfoInSnippet: MIT
+
+## Package Without Files
+PackageName: Without File Package
+SPDXID: SPDXRef-Without
+PackageVersion: 0.1.0
+PackageFileName: without-0.1.0.zip
+PackageDownloadLocation: https://sourceforge.net/projects/example/without/0.1.0/without-0.1.0.zip/download
+PackageChecksum: SHA1: 0d4e654c613ea68bffeeab1587b7dbac44826c2b
+PackageHomePage: http://without.sourceforge.net/
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MPL-2.0
+PackageLicenseComments: <text>Other versions available for a commercial license</text>
+PackageDescription: <text>This package information is a sample when analysis by software is not performed.</text>
+PackageCopyrightText: <text>Copyright Without Ltd</text>
+FilesAnalyzed: false
+
+## License Information
+LicenseID: LicenseRef-1
+ExtractedText: <text>
+The Haisho License, Version 1.0
+
+(C) Copyright 2000-2020, Daiki Haisho.  All rights reserved.
+ 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must "haisho" the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written "haisho".
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</text>
+LicenseName: Haisho License
+LicenseCrossReference: http://example.org/license/hasiho/LICENSE
+LicenseComment: <text>This is imaginary license and does not actually exist. </text>
+
+LicenseID: LicenseRef-2
+ExtractedText: <text>"THE BEER-WARE LICENSE" (Revision 42):
+phk@FreeBSD.ORG wrote this file. As long as you retain this notice you
+can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return Poul-Henning Kamp  </text>
+LicenseName: Beer-Ware License (Version 42)
+LicenseCrossReference:  http://people.freebsd.org/~phk/
+LicenseComment: <text>The beerware license has a couple of other standard variants.</text>
+
+## Review Information
+Reviewer: Person: Specific Reviewer ()
+ReviewDate: 2023-02-01T17:30:00Z
+ReviewComment: <text>This is just an example review comment.</text>

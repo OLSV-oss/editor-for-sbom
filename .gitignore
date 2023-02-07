@@ -1,0 +1,8 @@
+node_modules
+out/**
+client/bin/**
+client/out/**
+client/node_modules/**
+server/bin/**
+server/out/**
+server/node_modules/**
