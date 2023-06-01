@@ -30,6 +30,11 @@
             "patterns": [
                 {
                     "begin": "^(DocumentComment|CreatorComment):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -40,6 +45,11 @@
                 },
                 {
                     "begin": "^(PackageSourceInfo|PackageLicenseComments|PackageCopyrightText|PackageSummary|PackageDescription|PackageComment|ExternalRefComment|PackageAttributionText):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -50,6 +60,11 @@
                 },
                 {
                     "begin": "^(LicenseComments|FileCopyrightText|FileComment|FileNotice|FileAttributionText):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -60,6 +75,11 @@
                 },
                 {
                     "begin": "^(SnippetLicenseComments|SnippetCopyrightText|SnippetComment|SnippetAttributionText):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -70,6 +90,11 @@
                 },
                 {
                     "begin": "^(ExtractedText|LicenseComment):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -80,6 +105,11 @@
                 },
                 {
                     "begin": "^(RelationshipComment):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -90,6 +120,11 @@
                 },
                 {
                     "begin": "^(AnnotationComment):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "(?<=</text>)",
                     "patterns": [
                         {
@@ -116,7 +151,7 @@
                     "begin": "^(SPDXID):\\s(SPDXRef-DOCUMENT)",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.id"
+                            "name": "spdx.field.tag.id keyword.control"
                         },
                         "2": {
                             "name": "spdx.field.value.identifier"
@@ -145,6 +180,11 @@
             "patterns": [
                 {
                     "begin": "^(SPDXVersion|DataLicense|DocumentNamespace|ExternalDocumentRef|LicenseListVersion|Creator):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -155,6 +195,11 @@
                 },
                 {
                     "begin": "^(PackageSupplier|PackageOriginator|PackageDownloadLocation|FilesAnalyzed|PackageVerificationCode|PackageChecksum|PackageHomePage|PackageLicenseInfoFromFiles|ExternalRef):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -165,6 +210,11 @@
                 },
                 {
                     "begin": "^(FileName|FileType|FileChecksum|LicenseInfoInFile|ArtifactOfProjectHomePage|ArtifactOfProjectURI|ArtifactOfProjectName):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -175,6 +225,11 @@
                 },
                 {
                     "begin": "^(SnippetFromFileSPDXID|SnippetByteRange|SnippetLineRange|LicenseInfoInSnippet):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -185,6 +240,11 @@
                 },
                 {
                     "begin": "^(LicenseCrossReference):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -195,6 +255,11 @@
                 },
                 {
                     "begin": "^(Relationship):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -205,6 +270,11 @@
                 },
                 {
                     "begin": "^(Annotator|AnnotationType|SPDXREF):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -231,7 +301,7 @@
                     "begin": "^(PackageLicenseConcluded|PackageLicenseDeclared):\\s",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.license"
+                            "name": "spdx.field.tag.license keyword.control"
                         }
                     },
                     "end": "\\n",
@@ -246,7 +316,7 @@
                     "begin": "^(LicenseConcluded):\\s",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.license"
+                            "name": "spdx.field.tag.license keyword.control"
                         }
                     },
                     "end": "\\n",
@@ -261,7 +331,7 @@
                     "begin": "^(SnippetLicenseConcluded):\\s",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.license"
+                            "name": "spdx.field.tag.license keyword.control"
                         }
                     },
                     "end": "\\n",
@@ -276,7 +346,7 @@
                     "begin": "^(LicenseID):\\s",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.license"
+                            "name": "spdx.field.tag.license keyword.control"
                         }
                     },
                     "end": "\\n",
@@ -293,6 +363,11 @@
             "patterns": [
                 {
                     "begin": "^(DocumentName):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -303,6 +378,11 @@
                 },
                 {
                     "begin": "^(PackageName|PackageInfo|PackageVersion|PackageFileName):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -313,6 +393,11 @@
                 },
                 {
                     "begin": "^(FileContributor|FileDependency):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -323,6 +408,11 @@
                 },
                 {
                     "begin": "^(SnippetName):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -333,6 +423,11 @@
                 },
                 {
                     "begin": "^(LicenseName):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -343,6 +438,11 @@
                 },
                 {
                     "begin": "^(Relationship):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -353,6 +453,11 @@
                 },
                 {
                     "begin": "^(Annotator|AnnotationType|SPDXREF):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -363,6 +468,11 @@
                 },
                 {
                     "begin": "^(Reviewer):\\s",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        }
+                    },
                     "end": "\\n",
                     "patterns": [
                         {
@@ -379,7 +489,7 @@
                     "begin": "^(Created):\\s",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.date"
+                            "name": "keyword.control spdx.field.tag.date"
                         }
                     },
                     "end": "\\n",
@@ -394,7 +504,7 @@
                     "begin": "^(AnnotationDate):\\s",
                     "beginCaptures": {
                         "1": {
-                            "name": "spdx.field.tag.date"
+                            "name": "keyword.control spdx.field.tag.date"
                         }
                     },
                     "end": "\\n",
@@ -427,22 +537,22 @@
                 {
                     "comment": "2011-03-13T00:00:00Z",
                     "match": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z",
-                    "name": "spdx.field.value.date"
+                    "name": "spdx.field.value.date string.other"
                 },
                 {
                     "comment": "spdx-identifier",
                     "match": "SPDXRef-[[:alnum:]\\.\\-]+\\n",
-                    "name": "spdx.field.value.identifier"
+                    "name": "spdx.field.value.identifier variable.other"
                 },
                 {
                     "comment": "spdx-license-identifier",
                     "match": "LicenseRef-[[:alnum:]\\.\\-]+\\n",
-                    "name": "spdx.field.value.license"
+                    "name": "spdx.field.value.license variable.other"
                 },
                 {
                     "comment": "spdx-document-identifier",
                     "match": "DocumentRef-[[:alnum:]\\.\\-]+\\n",
-                    "name": "spdx.field.value.identifier"
+                    "name": "spdx.field.value.identifier variable.other"
                 },
                 {
                     "comment": "NONE",
@@ -453,11 +563,6 @@
                     "comment": "NOASSERTION",
                     "match": "NOASSERTION",
                     "name": "constant.character"
-                },
-                {
-                    "comment": "text",
-                    "match": ".*",
-                    "name": "spdx.field.value.text"
                 },
                 {
                     "begin": "(<text>)",
@@ -472,7 +577,12 @@
                             "name": "constant.character"
                         }
                     },
-                    "name": "spdx.field.value.comment"
+                    "name": "spdx.field.value.comment string.quoted.other"
+                },
+                {
+                    "comment": "text",
+                    "match": ".*",
+                    "name": "spdx.field.value.text string.unquoted"
                 }
             ]
         },
