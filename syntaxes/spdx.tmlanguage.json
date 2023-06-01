@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "spdx",
+    "scopeName": "source.spdx",
     "patterns": [
         {
             "include": "#multiple"
@@ -483,6 +483,5 @@
                 }
             ]
         }
-    },
-    "scopeName": "source.spdx"
+    }
 }
