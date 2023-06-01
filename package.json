@@ -1,11 +1,11 @@
 {
 	"name": "editor-for-sbom",
 	"displayName": "Editor for SBOM",
-	"publisher": "Hitachi Solutions,Ltd. OSS Management Solution Group",
+	"publisher": "olsv-oss",
 	"description": "This is language support for spdx tag-value file.",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.71.0"
+		"vscode": "^1.75.0"
 	},
 	"categories": [
 		"Programming Languages"
@@ -20,16 +20,12 @@
 	},
 	"license": "MIT",
 	"main": "./client/out/extension",
-	"activationEvents": [
-		"*"
-	],
 	"contributes": {
 		"languages": [
 			{
-				"id": "spdx",
+				"id": "spdx-tag-value",
 				"aliases": [
-					"spdx",
-					"spdx"
+					"SPDX Tag-Value"
 				],
 				"extensions": [
 					".spdx"
@@ -39,7 +35,7 @@
 		],
 		"grammars": [
 			{
-				"language": "spdx",
+				"language": "spdx-tag-value",
 				"scopeName": "source.spdx",
 				"path": "./syntaxes/spdx.tmLanguage.json"
 			}
@@ -53,7 +49,7 @@
 		],
 		"snippets": [
 			{
-				"language": "spdx",
+				"language": "spdx-tag-value",
 				"path": "./snippets.json"
 			}
 		]
@@ -68,7 +64,7 @@
 		"test": "cd server && npm run test && cd .."
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.70.0",
+		"@types/vscode": "^1.75.0",
 		"@types/glob": "^7.2.0",
 		"@types/node": "18.7.9",
 		"@typescript-eslint/eslint-plugin": "^5.33.1",

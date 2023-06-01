@@ -6,3 +6,4 @@ client/node_modules/**
 server/bin/**
 server/out/**
 server/node_modules/**
+*.vsix
